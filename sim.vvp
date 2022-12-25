@@ -1,0 +1,129 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x5632662438d0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x563266243a60 .scope module, "tb" "tb" 3 1;
+ .timescale 0 0;
+v0x56326625d040_0 .net "tb_CO", 0 0, L_0x56326625dfd0;  1 drivers
+v0x56326625d150_0 .net "tb_S", 1 0, L_0x56326625e4e0;  1 drivers
+v0x56326625d210_0 .var "tb_X", 1 0;
+v0x56326625d2e0_0 .var "tb_Y", 1 0;
+S_0x563266243bf0 .scope module, "test" "R_ADDER" 3 8, 4 15 0, S_0x563266243a60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "X";
+    .port_info 1 /INPUT 2 "Y";
+    .port_info 2 /OUTPUT 1 "CO";
+    .port_info 3 /OUTPUT 2 "S";
+v0x56326625cbb0_0 .net "CO", 0 0, L_0x56326625dfd0;  alias, 1 drivers
+v0x56326625cc70_0 .net "CO_0", 0 0, L_0x56326625d740;  1 drivers
+v0x56326625cd10_0 .net "S", 1 0, L_0x56326625e4e0;  alias, 1 drivers
+v0x56326625cdb0_0 .net "X", 1 0, v0x56326625d210_0;  1 drivers
+v0x56326625ce90_0 .net "Y", 1 0, v0x56326625d2e0_0;  1 drivers
+L_0x56326625d9c0 .part v0x56326625d210_0, 0, 1;
+L_0x56326625daf0 .part v0x56326625d2e0_0, 0, 1;
+L_0x56326625e250 .part v0x56326625d210_0, 1, 1;
+L_0x56326625e380 .part v0x56326625d2e0_0, 1, 1;
+L_0x56326625e4e0 .concat8 [ 1 1 0 0], L_0x56326625d900, L_0x56326625e190;
+S_0x563266205cf0 .scope module, "bit0" "F_ADDER" 4 24, 4 1 0, S_0x563266243bf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "CI";
+    .port_info 3 /OUTPUT 1 "CO";
+    .port_info 4 /OUTPUT 1 "S";
+L_0x5632662321e0 .functor AND 1, L_0x56326625d9c0, L_0x56326625daf0, C4<1>, C4<1>;
+L_0x7f4f543f9018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+L_0x563266232610 .functor AND 1, L_0x56326625d9c0, L_0x7f4f543f9018, C4<1>, C4<1>;
+L_0x56326625d4c0 .functor OR 1, L_0x5632662321e0, L_0x563266232610, C4<0>, C4<0>;
+L_0x56326625d600 .functor AND 1, L_0x56326625daf0, L_0x7f4f543f9018, C4<1>, C4<1>;
+L_0x56326625d740 .functor OR 1, L_0x56326625d4c0, L_0x56326625d600, C4<0>, C4<0>;
+L_0x56326625d850 .functor XOR 1, L_0x56326625d9c0, L_0x56326625daf0, C4<0>, C4<0>;
+L_0x56326625d900 .functor XOR 1, L_0x56326625d850, L_0x7f4f543f9018, C4<0>, C4<0>;
+v0x563266232c30_0 .net "CI", 0 0, L_0x7f4f543f9018;  1 drivers
+v0x563266230270_0 .net "CO", 0 0, L_0x56326625d740;  alias, 1 drivers
+v0x56326625b9e0_0 .net "S", 0 0, L_0x56326625d900;  1 drivers
+v0x56326625ba80_0 .net "X", 0 0, L_0x56326625d9c0;  1 drivers
+v0x56326625bb40_0 .net "Y", 0 0, L_0x56326625daf0;  1 drivers
+v0x56326625bc50_0 .net *"_ivl_0", 0 0, L_0x5632662321e0;  1 drivers
+v0x56326625bd30_0 .net *"_ivl_10", 0 0, L_0x56326625d850;  1 drivers
+v0x56326625be10_0 .net *"_ivl_2", 0 0, L_0x563266232610;  1 drivers
+v0x56326625bef0_0 .net *"_ivl_4", 0 0, L_0x56326625d4c0;  1 drivers
+v0x56326625bfd0_0 .net *"_ivl_6", 0 0, L_0x56326625d600;  1 drivers
+S_0x56326625c150 .scope module, "bit1" "F_ADDER" 4 25, 4 1 0, S_0x563266243bf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "X";
+    .port_info 1 /INPUT 1 "Y";
+    .port_info 2 /INPUT 1 "CI";
+    .port_info 3 /OUTPUT 1 "CO";
+    .port_info 4 /OUTPUT 1 "S";
+L_0x56326625dcb0 .functor AND 1, L_0x56326625e250, L_0x56326625e380, C4<1>, C4<1>;
+L_0x56326625dd20 .functor AND 1, L_0x56326625e250, L_0x56326625d740, C4<1>, C4<1>;
+L_0x56326625de20 .functor OR 1, L_0x56326625dcb0, L_0x56326625dd20, C4<0>, C4<0>;
+L_0x56326625dee0 .functor AND 1, L_0x56326625e380, L_0x56326625d740, C4<1>, C4<1>;
+L_0x56326625dfd0 .functor OR 1, L_0x56326625de20, L_0x56326625dee0, C4<0>, C4<0>;
+L_0x56326625e0e0 .functor XOR 1, L_0x56326625e250, L_0x56326625e380, C4<0>, C4<0>;
+L_0x56326625e190 .functor XOR 1, L_0x56326625e0e0, L_0x56326625d740, C4<0>, C4<0>;
+v0x56326625c300_0 .net "CI", 0 0, L_0x56326625d740;  alias, 1 drivers
+v0x56326625c3a0_0 .net "CO", 0 0, L_0x56326625dfd0;  alias, 1 drivers
+v0x56326625c440_0 .net "S", 0 0, L_0x56326625e190;  1 drivers
+v0x56326625c4e0_0 .net "X", 0 0, L_0x56326625e250;  1 drivers
+v0x56326625c5a0_0 .net "Y", 0 0, L_0x56326625e380;  1 drivers
+v0x56326625c6b0_0 .net *"_ivl_0", 0 0, L_0x56326625dcb0;  1 drivers
+v0x56326625c790_0 .net *"_ivl_10", 0 0, L_0x56326625e0e0;  1 drivers
+v0x56326625c870_0 .net *"_ivl_2", 0 0, L_0x56326625dd20;  1 drivers
+v0x56326625c950_0 .net *"_ivl_4", 0 0, L_0x56326625de20;  1 drivers
+v0x56326625ca30_0 .net *"_ivl_6", 0 0, L_0x56326625dee0;  1 drivers
+    .scope S_0x563266243a60;
+T_0 ;
+    %vpi_call/w 3 13 "$monitor", v0x56326625d210_0, v0x56326625d2e0_0, v0x56326625d150_0, v0x56326625d040_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x56326625d210_0, 0, 2;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x56326625d2e0_0, 0, 2;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x56326625d210_0, 0, 2;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x56326625d2e0_0, 0, 2;
+    %delay 1, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x56326625d210_0, 0, 2;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x56326625d2e0_0, 0, 2;
+    %delay 1, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x56326625d210_0, 0, 2;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x56326625d2e0_0, 0, 2;
+    %delay 1, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x56326625d210_0, 0, 2;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x56326625d2e0_0, 0, 2;
+    %delay 1, 0;
+    %vpi_call/w 3 36 "$display", "TEST COMPLETE" {0 0 0};
+    %vpi_call/w 3 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x563266243a60;
+T_1 ;
+    %vpi_call/w 3 42 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call/w 3 43 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "adder_tb.sv";
+    "adder.sv";

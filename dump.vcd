@@ -1,0 +1,106 @@
+$date
+	Sun Dec 25 11:41:22 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$var wire 2 ! tb_S [1:0] $end
+$var wire 1 " tb_CO $end
+$var reg 2 # tb_X [1:0] $end
+$var reg 2 $ tb_Y [1:0] $end
+$scope module test $end
+$var wire 2 % X [1:0] $end
+$var wire 2 & Y [1:0] $end
+$var wire 2 ' S [1:0] $end
+$var wire 1 ( CO_0 $end
+$var wire 1 " CO $end
+$scope module bit0 $end
+$var wire 1 ) CI $end
+$var wire 1 ( CO $end
+$var wire 1 * S $end
+$var wire 1 + X $end
+$var wire 1 , Y $end
+$upscope $end
+$scope module bit1 $end
+$var wire 1 ( CI $end
+$var wire 1 " CO $end
+$var wire 1 - S $end
+$var wire 1 . X $end
+$var wire 1 / Y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x/
+x.
+x-
+x,
+x+
+x*
+0)
+x(
+bx '
+bx &
+bx %
+bx $
+bx #
+x"
+bx !
+$end
+#1
+0-
+0(
+0"
+b0 !
+b0 '
+0*
+0,
+0/
+0+
+0.
+b0 $
+b0 &
+b0 #
+b0 %
+#2
+b1 !
+b1 '
+1*
+1+
+b1 #
+b1 %
+#3
+b11 !
+b11 '
+1-
+1,
+0+
+1.
+b1 $
+b1 &
+b10 #
+b10 %
+#4
+1"
+b1 !
+b1 '
+0-
+1/
+b11 $
+b11 &
+#5
+1-
+1(
+b10 !
+b10 '
+0*
+1+
+b11 #
+b11 %
+#6
